@@ -4,15 +4,15 @@ name: Build and push derper Docker image
 # events but only for the master branch
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
-    paths: 
-      - 'derper/Dockerfile'
-      - '.github/workflows/derper.yml'
-  pull_request:
-    branches: [ main ]
-    paths: 
-      - 'derper/Dockerfile'
+#   push:
+#     branches: [ main ]
+#     paths: 
+#       - 'derper/Dockerfile'
+#       - '.github/workflows/derper.yml'
+#   pull_request:
+#     branches: [ main ]
+#     paths: 
+#       - 'derper/Dockerfile'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
