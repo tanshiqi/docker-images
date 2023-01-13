@@ -2,6 +2,8 @@ FROM gotenberg/gotenberg:7
 
 USER root
 
+COPY fonts/* /usr/local/share/fonts/
+
 RUN apt-get update -qq &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends libreoffice-l10n-zh-cn &&\
     sed -i '/zh_CN.UTF-8/s/^# //g' /etc/locale.gen &&\
