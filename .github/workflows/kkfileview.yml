@@ -44,5 +44,5 @@ jobs:
         context: kkFileView
         push: true
         tags: |
-          tanshiqi/kkFileView:latest
-          ghcr.io/tanshiqi/kkFileView:latest
+          tanshiqi/kkfileview:latest
+          ghcr.io/tanshiqi/kkfileview:latest
