@@ -2,7 +2,7 @@ FROM gotenberg/gotenberg:8
 
 USER root
 
-COPY fonts/* /usr/local/share/fonts/
+# COPY fonts/* /usr/local/share/fonts/
 
 RUN apt-get update -qq &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends -t bookworm-backports libreoffice-l10n-zh-cn &&\
