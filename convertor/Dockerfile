@@ -5,7 +5,7 @@ USER root
 COPY fonts/* /usr/local/share/fonts/
 
 RUN apt-get update -qq &&\
-    DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends -t bookworm-backports libreoffice-l10n-de &&\
+    DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends -t bookworm-backports libreoffice-l10n-zh-cn &&\
     sed -i '/zh_CN.UTF-8/s/^# //g' /etc/locale.gen &&\
     locale-gen &&\
     # Cleanup.
@@ -15,7 +15,7 @@ RUN apt-get update -qq &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LANG zh_CN.UTF-8
-ENV LANGUAGE zh_CN:de
+ENV LANGUAGE zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
 USER gotenberg
