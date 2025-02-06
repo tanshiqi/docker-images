@@ -62,7 +62,8 @@ jobs:
         if: ${{ env.IMAGE_EXISTS == 'false' || github.event_name != 'schedule' }}
         uses: docker/build-push-action@v6
         with:
-          context: .
+          file: 'derper/Dockerfile'
+          context: derper
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |
