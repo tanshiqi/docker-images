@@ -24,7 +24,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           logout: false
 
       - name: Log in to DockerHub Registry
@@ -41,7 +41,7 @@ jobs:
 
       - name: Check if the image exists
         run: |
-          GHCR_TOKEN=$(echo ${{ secrets.GHCR_TOKEN }} | base64)
+          GHCR_TOKEN=$(echo ${{ secrets.GITHUB_TOKEN }} | base64)
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             -H "Authorization: Bearer $GHCR_TOKEN" \
             https://ghcr.io/v2/${{ github.repository }}/manifests/${{ env.TAILSCALE_VERSION }}
